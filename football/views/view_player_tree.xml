@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_player_tree" model="ir.ui.view">
+            <field name="name">football.player.list</field>
+            <field name="model">football.player</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" />
+                    <field name="day_of_birth" />
+                    <field name="country" />
+                    <field name="team" />
+                    <field name="position" />
+                    <field name="height"/>
+                    <field name="weight"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_player_form" model="ir.ui.view">
+            <field name="name">football.player.form</field>
+            <field name="model">football.player</field>
+            <field name="arch" type="xml">
+                <form string="Player">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="day_of_birth" />
+                                <field name="country" />
+                                <field name="team" />
+                            </group>
+                            <group>
+                                <field name="position" />
+                                <field name="height"/>
+                                <field name="weight"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_football_player" model="ir.actions.act_window">
+            <field name="name">Players</field>
+            <field name="res_model">football.player</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="menu_football_root" name="Player Management" groups="group_player_user" sequence="10"/>
+        <menuitem id="menu_football_player_parent" name="Player" parent="menu_football_root" groups="group_player_user" sequence="20"/>
+        <menuitem id="menu_football_player" name="All Players" parent="menu_football_player_parent" action="action_football_player" groups="group_player_user" sequence="30"/>
+    </data>
+</odoo>
