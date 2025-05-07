@@ -1,2 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_school_manager,school.information,model_school_information,base.group_user,1,1,1,1
+access_school_admin,school.info,model_school_info,school_management.group_school_admin,1,1,1,1
+access_faculty_admin,faculty.info,model_faculty_info,school_management.group_school_admin,1,1,1,1
+access_major_admin,major.info,model_major_info,school_management.group_school_admin,1,1,1,1
+access_subject_admin,subject.info,model_subject_info,school_management.group_school_admin,1,1,1,1
+access_student_admin,student.info,model_student_info,school_management.group_school_admin,1,1,1,1
+access_enrollment_admin,enrollment.info,model_enrollment_info,school_management.group_school_admin,1,1,1,1
+
+access_school_user,school.info,model_school_info,school_management.group_school_user,1,0,0,0
+access_faculty_user,faculty.info,model_faculty_info,school_management.group_school_user,1,0,0,0

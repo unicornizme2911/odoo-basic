@@ -1,0 +1,43 @@
+name,type,email,address,phone,rank,establish
+Trường Đại học Bách khoa - ĐHQG-HCM,public,vp@hcmut.edu.vn,"268 Lý Thường Kiệt, Phường 14, Quận 10, TP.HCM",(028)38654256,8,1957-06-29
+Trường Đại học Khoa học Tự nhiên - ĐHQG-HCM,public,khcn@hcmus.edu.vn,"227 Nguyễn Văn Cừ, Phường 4, Quận 5, TP.HCM",(028)38355929,15,1941-03-01
+Trường Đại học Khoa học Xã hội và Nhân văn - ĐHQG-HCM,public,bantuyensinh@hcmussh.edu.vn,"10-12 Đinh Tiên Hoàng, Phường Bến Nghé, Quận 1, TP.HCM",(028)38293828,25,1957-10-27
+Trường Đại học Kinh tế - Luật - ĐHQG-HCM,public,tuyensinh@uel.edu.vn,"Khu phố 3, Phường Linh Trung, TP. Thủ Đức, TP.HCM",(028)37244555,3,2000-07-10
+Trường Đại học Sư phạm TP.HCM,public,bantuyensinh@hcmue.edu.vn,"280 An Dương Vương, Phường 4, Quận 5, TP.HCM",(028)38352020,12,1976-10-27
+Trường Đại học Nông Lâm TP.HCM,public,tttvts@hcmuaf.edu.vn,"Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP.HCM",(028)38963333,20,1955-11-19
+Trường Đại học Mở TP.HCM,public,tuyensinh@ou.edu.vn,"97 Võ Văn Tần, Phường 6, Quận 3, TP.HCM",(028)39300999,35,1993-07-15
+Trường Đại học Luật TP.HCM,public,tuyensinh@hcmulaw.edu.vn,"02 Nguyễn Tất Thành, Phường 12, Quận 4, TP.HCM",(028)38290376,5,1996-03-30
+Trường Đại học Sài Gòn,public,vptt@sgu.edu.vn,"105 Bà Huyện Thanh Quan, Phường 7, Quận 3, TP.HCM",(028)38291735,18,2007-10-26
+Trường Đại học Văn Lang,private,tuyensinh@vanlanguni.edu.vn,"180/69 Nguyễn Hữu Cảnh, Phường 22, Quận Bình Thạnh, TP.HCM",(028)71059999,42,1995-09-27
+Trường Đại học Hoa Sen,private,tuyensinh@hoasen.edu.vn,"Số 8 Nguyễn Văn Tráng, Phường Bến Thành, Quận 1, TP.HCM",(028)73091991,28,1991-03-26
+Trường Đại học FPT TP.HCM,private,daihoc.hcm@fpt.edu.vn,"Lô E2a-7, Đường D1, Khu Công nghệ cao, Phường Long Thạnh Mỹ, TP. Thủ Đức, TP.HCM",(028)73005585,10,2006-09-08
+Trường Đại học RMIT Việt Nam (Cơ sở Nam Sài Gòn),private,enquiries@rmit.edu.vn,"702 Nguyễn Văn Linh, Phường Tân Phú, Quận 7, TP.HCM",(028)37761300,1,2001-01-01
+Trường Đại học Quốc tế Sài Gòn,private,admission@isgu.edu.vn,"15 Lê Văn Thiêm (Khu dân cư Him Lam), Phường Tân Hưng, Quận 7, TP.HCM",(028)54137979,31,2002-01-01
+Trường Đại học Công nghệ TP.HCM (HUTECH),private,tuyensinh@hutech.edu.vn,"475A Điện Biên Phủ, Phường 25, Quận Bình Thạnh, TP.HCM",(028)54452222,16,1995-04-26
+Trường Đại học Kinh tế Tài chính TP.HCM (UEF),private,tuyensinh@uef.edu.vn,"141 - 145 Điện Biên Phủ, Phường 15, Quận Bình Thạnh, TP.HCM",(028)54225555,22,2007-09-24
+Trường Đại học Ngoại ngữ - Tin học TP.HCM (HUFLIT),private,tuyensinh@huflit.edu.vn,"828 Sư Vạn Hạnh, Phường 13, Quận 10, TP.HCM",(028)38632050,38,1992-10-15
+Trường Đại học Hồng Bàng,private,tuyensinh@hbu.edu.vn,"215 Điện Biên Phủ, Phường 15, Quận Bình Thạnh, TP.HCM",(028)73002200,45,1997-08-08
+Trường Đại học Gia Định,private,tuyensinh@giadinh.edu.vn,"185-187 Hoàng Văn Thụ, Phường 8, Quận Phú Nhuận, TP.HCM",(028)73013456,40,2007-01-01
+Trường Đại học Nguyễn Tất Thành,private,tuyensinh@ntt.edu.vn,"300A Nguyễn Tất Thành, Phường 13, Quận 4, TP.HCM",(028)39411246,29,1999-01-01
+Trường Đại học Văn Hiến,private,tuyensinh@vhu.edu.vn,"613 Âu Cơ, Phường Phú Trung, Quận Tân Phú, TP.HCM",(028)38645599,33,1997-07-11
+Trường Đại học Kiến trúc TP.HCM,public,info@uah.edu.vn,"196 Pasteur, Phường 6, Quận 3, TP.HCM",(028)38222736,11,1926-07-27
+Trường Đại học Mỹ thuật TP.HCM,public,mythuat@hcmufa.edu.vn,"5 Phan Đăng Lưu, Phường 3, Quận Bình Thạnh, TP.HCM",(028)38417051,48,1913-01-01
+Trường Đại học Sân khấu - Điện ảnh TP.HCM,public,skda@skda.edu.vn,"125 Cống Quỳnh, Phường Nguyễn Cư Trinh, Quận 1, TP.HCM",(028)38394741,50,1976-01-01
+Nhạc viện TP.HCM,public,nhacvientphcm@hcmconsrv.gov.vn,"112 Nguyễn Du, Phường Bến Thành, Quận 1, TP.HCM",(028)38298689,49,1956-01-01
+Trường Đại học Y khoa Phạm Ngọc Thạch,public,pntmu@pntmu.edu.vn,"02 Dương Quang Trung, Phường 12, Quận 10, TP.HCM",(028)38652345,7,2008-01-01
+Trường Đại học Công nghiệp TP.HCM (IUH),public,tuyensinh@iuh.edu.vn,"12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, TP.HCM",(028)38940390,14,1956-12-24
+Trường Đại học Sư phạm Kỹ thuật TP.HCM (HCMUTE),public,dhspkt@hcmute.edu.vn,"01 Võ Văn Ngân, Phường Linh Chiểu, TP. Thủ Đức, TP.HCM",(028)38968641,9,1962-07-01
+Trường Đại học Giao thông vận tải TP.HCM,public,bantuyensinh@hcmutrans.edu.vn,"Số 2 đường D3, Khu dân cư Him Lam, Phường Tân Hưng, Quận 7, TP.HCM",(028)38220051,27,1988-08-15
+Trường Đại học Tài chính - Marketing (UFM),public,tuyensinh@ufm.edu.vn,"778 Nguyễn Kiệm, Phường 4, Quận Phú Nhuận, TP.HCM",(028)37715858,19,1976-01-01
+Trường Đại học Ngân hàng TP.HCM (HUB),public,tuyensinh@buh.edu.vn,"36 Tôn Thất Đạm, Phường Nguyễn Thái Bình, Quận 1, TP.HCM",(028)38291450,6,1976-01-01
+Trường Đại học Tôn Đức Thắng,public,tuyensinh@tdtu.edu.vn,"19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP.HCM",(028)37755050,4,1997-09-24
+Trường Đại học Quốc tế - ĐHQG-HCM (VNUHCM-IU),public,tuyensinh@hcmiu.edu.vn,"Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP.HCM",(028)37244270,13,2003-12-11
+Trường Đại học Kinh tế TP.HCM (UEH),public,tuyensinh@ueh.edu.vn,"279 Nguyễn Tri Phương, Phường 5, Quận 10, TP.HCM",(028)38230082,17,1976-03-09
+Trường Đại học Công nghiệp Thực phẩm TP.HCM (HUFI),public,tuyensinh@hufi.edu.vn,"140 Lê Trọng Tấn, Phường Tây Thạnh, Quận Tân Phú, TP.HCM",(028)38163319,30,1982-09-26
+Trường Đại học Văn hóa TP.HCM,public,vhtphcm@hcmuc.edu.vn,"51 Quốc Hương, Phường Thảo Điền, TP. Thủ Đức, TP.HCM",(028)38406226,46,1976-01-01
+Trường Đại học Thể dục Thể thao TP.HCM,public,theducthethao@hcmus.edu.vn,"639 Nguyễn Trãi, Phường 11, Quận 5, TP.HCM",(028)38551703,39,1976-01-01
+Trường Đại học Nguyễn Trãi,private,tuyensinh@ntu.edu.vn,"369 Hoàng Bá Bích, Phường Long Thạnh Mỹ, TP. Thủ Đức, TP.HCM",(028)36367788,36,2011-01-01
+Trường Đại học Quốc tế Hồng Bàng,private,info@hiu.vn,"05 Hòa Bình, Phường Hòa Thạnh, Quận Tân Phú, TP.HCM",(028)73083456,24,2017-01-01
+Trường Đại học Greenwich (Việt Nam - Cơ sở TP.HCM),private,tuyensinh.hcm@greenwich.edu.vn,"2 Phạm Văn Bạch, Phường 15, Quận Tân Bình, TP.HCM",(028)73000033,34,2009-01-01
+Trường Đại học Y khoa Tokyo Việt Nam (Cơ sở TP.HCM),private,hcmc@tokyo-human.ac.jp,"Lô P1-P2-P3, Đường D1, Khu Công nghệ cao, Phường Tân Phú, TP. Thủ Đức, TP.HCM",(028)37286355,26,2016-01-01
+Trường Đại học Fulbright Việt Nam,private,admissions@fulbright.edu.vn,"Tầng 8, Tòa nhà Bitexco Financial Tower, Số 2 Hải Triều, Phường Bến Nghé, Quận 1, TP.HCM",(028)73037788,32,2016-01-01

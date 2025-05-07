@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_student_list" model="ir.ui.view">
+            <field name="name">student.info.list</field>
+            <field name="model">student.info</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="mssv"/>
+                    <field name="name"/>
+                    <field name="day_of_birth"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="school_id"/>
+                    <field name="major_id"/>
+                    <field name="gpa"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_student_form" model="ir.ui.view">
+            <field name="name">student.info.form</field>
+            <field name="model">student.info</field>
+            <field name="arch" type="xml">
+                <form string="Thông tin Sinh viên">
+                    <sheet>
+                        <field name="avatar" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="day_of_birth"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                            </group>
+                            <group>
+                                <field name="gpa"/>
+                                <field name="school_id"/>
+                                <field name="major_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Đăng ký học">
+                                <field name="enrollment_ids">
+                                    <list>
+                                        <field name="subject_id"/>
+                                        <field name="enrollment_date"/>
+                                        <field name="grade"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <field name="subject_id"/>
+                                            <field name="enrollment_date"/>
+                                            <field name="grade"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_student" model="ir.actions.act_window">
+            <field name="name">Sinh viên</field>
+            <field name="res_model">student.info</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p faculty="o_view_faculty_info">
+                    Create a new faculty for more!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="student_menu" name="Sinh viên" parent="school_menu_root" action="action_student" sequence="30"/>
+    </data>
+</odoo>

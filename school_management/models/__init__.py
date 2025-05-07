@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import school_information
+from . import school, faculty, major, subject, student, enrollment

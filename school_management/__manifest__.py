@@ -29,8 +29,11 @@ This module allows you to manage school-related activities such as:
 
     # always loaded
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
-        'views/school_information.xml',
+        'views/school_info.xml',
+        'views/faculty_info.xml',
+        'views/student_info.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],
