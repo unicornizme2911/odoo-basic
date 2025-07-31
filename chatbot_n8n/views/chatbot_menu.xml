@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="menu_chatbot_root" name="Chatbot"/>
+    <record id="action_chatbot_ui" model="ir.actions.act_url">
+        <field name="name">Chatbot</field>
+        <field name="url">/chatbot</field>
+        <field name="target">self</field>
+    </record>
+    <menuitem id="menu_chatbot_ui" name="Giao diện Chatbot" parent="menu_chatbot_root" action="action_chatbot_ui"/>
+</odoo>

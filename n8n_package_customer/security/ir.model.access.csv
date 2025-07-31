@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_n8n_package_customer_admin,n8n.package.customer,model_n8n_package_customer,n8n_package_customer.group_n8n_admin,1,1,1,1
+access_n8n_package_customer_user,n8n.package.customer,model_n8n_package_customer,n8n_package_customer.group_n8n_user,1,0,0,0
+
+access_n8n_package_order_admin,n8n.package.order,model_n8n_package_order,n8n_package_customer.group_n8n_admin,1,1,1,1
+access_n8n_package_order_user,n8n.package.order,model_n8n_package_order,n8n_package_customer.group_n8n_user,1,0,0,0
+
+access_n8n_community_node_admin,n8n.community.node,model_n8n_community_node,n8n_package_customer.group_n8n_admin,1,1,1,1
+access_n8n_community_node_user,n8n.community.node,model_n8n_community_node,n8n_package_customer.group_n8n_user,1,0,0,0

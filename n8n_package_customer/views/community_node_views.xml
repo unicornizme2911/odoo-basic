@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="n8n_node_community_tree_view" model="ir.ui.view">
+            <field name="name">n8n.community.node.tree</field>
+            <field name="model">n8n.community.node</field>
+            <field name="arch" type="xml">
+                <tree string="Node Community">
+                    <header>
+                        <button name="action_sync_from_npm" string="Đồng bộ từ NPM" type="object" class="btn-primary"/>
+                    </header>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="npm_url"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="n8n_node_community_form_view" model="ir.ui.view">
+            <field name="name">n8n.community.node.form</field>
+            <field name="model">n8n.community.node</field>
+            <field name="arch" type="xml">
+                <form string="Node Community">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="npm_url"/>
+                            <field name="github_url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_community_node" model="ir.actions.act_window">
+            <field name="name">Node Community</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">n8n.community.node</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_sync_npm_server" model="ir.actions.server">
+            <field name="name">Đồng bộ Node từ NPM</field>
+            <field name="model_id" ref="model_n8n_community_node"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = env['n8n.community.node'].action_sync_from_npm()
+            </field>
+        </record>
+
+        <menuitem id="menu_sync_npm_node" name="Đồng bộ từ NPM" parent="menu_n8n_root" action="action_sync_npm_server" sequence="100" />
+        <menuitem id="menu_n8n_nodes" name="Node Community" parent="menu_n8n_root" action="action_community_node"/>
+    </data>
+</odoo>

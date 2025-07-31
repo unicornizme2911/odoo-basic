@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="n8n_package_order_form_view" model="ir.ui.view">
+            <field name="name">n8n.package.order.form</field>
+            <field name="model">n8n.package.order</field>
+            <field name="arch" type="xml">
+                <form string="Gói dịch vụ n8n">
+                    <header>
+                        <button name="action_install_node_community" string="Cài đặt Node vào n8n" type="object" class="btn-primary"/>
+<!--                        <button name="action_start_instance" string="Start n8n" type="object" class="btn-success"/>-->
+<!--                        <button name="action_stop_instance" string="Stop n8n" type="object" class="btn-danger"/>-->
+<!--                        <button name="action_restart_instance" string="Restart n8n" type="object" class="btn-info"/>-->
+                        <field name="instance_status" widget="statusbar" statusbar_visible="running,stopped,error"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="package_name"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="notes"/>
+                        </group>
+                        <group>
+                            <field name="domain"/>
+                            <field name="port"/>
+                            <field name="n8n_username"/>
+                            <field name="n8n_password"/>
+                        </group>
+                        <group string="Node Community">
+                            <field name="node_community_ids" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="n8n_package_order_tree_view" model="ir.ui.view">
+            <field name="name">n8n.package.order.tree</field>
+            <field name="model">n8n.package.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_id"/>
+                    <field name="package_name"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_n8n_package_order" model="ir.actions.act_window">
+            <field name="name">Gói dịch vụ đã mua</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">n8n.package.order</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_n8n_package_orders" name="Gói dịch vụ đã mua" parent="menu_n8n_root" action="action_n8n_package_order"/>
+    </data>
+</odoo>
