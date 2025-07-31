@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="chat_module.chat_interface">
+        <div class="o_chat_container">
+            <!-- Sidebar with conversation list -->
+            <div class="o_chat_sidebar">
+                <div class="o_chat_sidebar_header">
+                    <h3>Chats</h3>
+                    <button type="button" class="btn btn-primary btn-sm o_new_chat_btn">
+                        <i class="fa fa-plus"/> New Chat
+                    </button>
+                </div>
+                <div class="o_chat_conversations_list">
+                    <div class="o_chat_empty_state">
+                        <i class="fa fa-spinner fa-spin"></i>
+                        <h3>Loading conversations...</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main chat area -->
+            <div class="o_chat_main">
+                <div class="o_chat_header">
+                    <div class="o_chat_header_info">
+                        <img class="o_chat_avatar" src="/chat_module/static/src/img/default_avatar.png" alt="Avatar"/>
+                        <div class="o_chat_header_text">
+                            <h4 class="o_chat_title">Select a conversation</h4>
+                            <span class="o_chat_status">Click on a conversation to start chatting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_chat_messages_container">
+                    <div class="o_chat_messages">
+                        <div class="o_chat_empty_state">
+                            <i class="fa fa-comments"></i>
+                            <h3>Welcome to Chat</h3>
+                            <p>Select a conversation from the sidebar to start chatting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="o_chat_input_container">
+                    <div class="o_chat_input_wrapper">
+                        <input type="text" class="o_chat_input" placeholder="Type a message..." />
+                        <button type="button" class="o_chat_send_btn">
+                            <i class="fa fa-paper-plane"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

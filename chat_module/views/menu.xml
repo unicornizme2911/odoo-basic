@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Chat Action using URL with new ID -->
+        <record id="chat_url_action" model="ir.actions.act_url">
+            <field name="name">Chat</field>
+            <field name="url">/chat_ui</field>
+            <field name="target">self</field>
+        </record>
+
+        <!-- Root Menu -->
+        <menuitem id="menu_chat_root"
+                  name="Chat"
+                  sequence="100"
+        />
+
+        <!-- Chat Menu Item -->
+        <menuitem id="menu_chat_main"
+                  name="Messages"
+                  parent="menu_chat_root"
+                  action="chat_url_action"
+                  sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="chat_template" name="Chat Template">
+            <t t-call="web.layout">
+                <html>
+                    <head>
+                        <meta charset="utf-8"/>
+                        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                        <title>Odoo Chat</title>
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+                        <style>
+                            body {
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            background-color: #f8f9fa;
+                            margin: 0;
+                            padding: 0;
+                            height: 100vh;
+                            overflow: hidden;
+                            }
+
+                            .o_chat_container {
+                            height: 100vh;
+                            background: white;
+                            }
+
+                            .conversations-sidebar {
+                            background: #f8f9fa;
+                            border-right: 1px solid #dee2e6;
+                            height: 100vh;
+                            }
+
+                            .conversation-item {
+                            cursor: pointer;
+                            transition: all 0.2s ease;
+                            border-bottom: 1px solid #e9ecef;
+                            }
+
+                            .conversation-item:hover {
+                            background-color: #e9ecef !important;
+                            }
+
+                            .conversation-item.active {
+                            background-color: #0d6efd !important;
+                            color: white !important;
+                            }
+
+                            .conversation-item.active .text-muted {
+                            color: rgba(255, 255, 255, 0.8) !important;
+                            }
+
+                            .conversation-item.active .status-indicator {
+                            border-color: #0d6efd !important;
+                            }
+
+                            .avatar {
+                            width: 45px;
+                            height: 45px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 50%;
+                            color: white;
+                            font-size: 1rem;
+                            flex-shrink: 0;
+                            }
+
+                            .avatar-sm {
+                            width: 35px;
+                            height: 35px;
+                            font-size: 0.875rem;
+                            }
+
+                            .status-indicator {
+                            width: 12px;
+                            height: 12px;
+                            border: 2px solid white;
+                            border-radius: 50%;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            }
+
+                            .chat-area {
+                            height: 100vh;
+                            display: flex;
+                            flex-direction: column;
+                            }
+
+                            .chat-header {
+                            background: #f8f9fa;
+                            border-bottom: 1px solid #dee2e6;
+                            padding: 1rem;
+                            }
+
+                            .chat-messages {
+                            flex: 1;
+                            overflow-y: auto;
+                            padding: 1rem;
+                            background: #f8f9fa;
+                            }
+
+                            .message {
+                            margin-bottom: 1rem;
+                            display: flex;
+                            align-items: flex-start;
+                            }
+
+                            .message.sent {
+                            flex-direction: row-reverse;
+                            }
+
+                            .message .avatar {
+                            width: 35px;
+                            height: 35px;
+                            font-size: 0.875rem;
+                            margin: 0 0.75rem;
+                            }
+
+                            .message-content {
+                            background: white;
+                            padding: 0.75rem 1rem;
+                            border-radius: 1.125rem;
+                            max-width: 70%;
+                            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                            position: relative;
+                            }
+
+                            .message.sent .message-content {
+                            background: #0d6efd;
+                            color: white;
+                            }
+
+                            .message-time {
+                            font-size: 0.75rem;
+                            color: #6c757d;
+                            margin-top: 0.25rem;
+                            }
+
+                            .message.sent .message-time {
+                            color: rgba(255, 255, 255, 0.8);
+                            }
+
+                            .welcome-message {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100%;
+                            text-align: center;
+                            color: #6c757d;
+                            }
+
+                            .welcome-message i {
+                            font-size: 4rem;
+                            color: #dee2e6;
+                            margin-bottom: 1rem;
+                            }
+
+                            .typing-indicator {
+                            padding: 0.5rem 1rem;
+                            background: #f8f9fa;
+                            border-top: 1px solid #dee2e6;
+                            display: none;
+                            }
+
+                            .typing-dots {
+                            display: flex;
+                            align-items: center;
+                            }
+
+                            .typing-dot {
+                            width: 8px;
+                            height: 8px;
+                            background: #6c757d;
+                            border-radius: 50%;
+                            margin: 0 2px;
+                            animation: typing 1.4s infinite;
+                            }
+
+                            .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+                            .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+                            @keyframes typing {
+                            0%, 60%, 100% { opacity: 0.3; }
+                            30% { opacity: 1; }
+                            }
+
+                            .chat-input {
+                            padding: 1rem;
+                            border-top: 1px solid #dee2e6;
+                            background: white;
+                            }
+
+                            .input-group {
+                            background: #f8f9fa;
+                            border-radius: 25px;
+                            overflow: hidden;
+                            border: 1px solid #dee2e6;
+                            }
+
+                            .input-group:focus-within {
+                            border-color: #0d6efd;
+                            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+                            }
+
+                            #message-input {
+                            border: none;
+                            background: transparent;
+                            padding: 0.75rem 1rem;
+                            font-size: 0.875rem;
+                            outline: none;
+                            box-shadow: none;
+                            }
+
+                            #message-input:focus {
+                            background: white;
+                            box-shadow: none;
+                            }
+
+                            #send-button {
+                            width: 50px;
+                            height: 50px;
+                            border: none;
+                            background: #0d6efd;
+                            color: white;
+                            border-radius: 0 25px 25px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            transition: background-color 0.2s;
+                            }
+
+                            #send-button:hover:not(:disabled) {
+                            background: #0b5ed7;
+                            }
+
+                            #send-button:disabled {
+                            background: #6c757d;
+                            cursor: not-allowed;
+                            }
+
+                            /* Responsive */
+                            @media (max-width: 768px) {
+                            .conversations-sidebar {
+                            display: none;
+                            }
+                            .chat-area {
+                            width: 100%;
+                            }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="o_chat_container">
+                            <div class="container-fluid h-100 p-0">
+                                <div class="row h-100 g-0">
+                                    <!-- Left Sidebar - Conversations -->
+                                    <div class="col-md-4 col-lg-3 conversations-sidebar">
+                                        <div class="d-flex flex-column h-100">
+                                            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                                                <h5 class="mb-0 fw-bold">Cuộc trò chuyện</h5>
+                                                <button class="btn btn-sm btn-primary" id="new-conversation-btn" title="Tạo cuộc trò chuyện mới">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+
+                                            <div class="flex-grow-1 overflow-auto" id="conversations-list">
+                                                <ul class="list-group">
+                                                    <t t-foreach="conversations" t-as="s">
+                                                        <li>
+                                                            <div class="conversation-item p-3" t-attf-data-conversation-id="#{s['id']}">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div class="position-relative me-3">
+                                                                        <div class="avatar bg-primary">
+                                                                            <i class="fas fa-user"></i>
+                                                                        </div>
+                                                                        <div class="status-indicator bg-success"></div>
+                                                                    </div>
+                                                                    <div class="flex-grow-1">
+                                                                        <h6 class="mb-1 fw-semibold"><t t-esc="s['name']"/></h6>
+                                                                        <small class="text-muted d-block text-truncate">
+                                                                            <t t-esc="s['last_message_content']"/>
+                                                                        </small>
+                                                                        <small class="text-muted" style="font-size: 0.75rem;">
+                                                                            <t t-esc="s['last_message_time']"/>
+                                                                        </small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Content - Chat Area -->
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="chat-area">
+                                            <!-- Chat Header -->
+                                            <div class="chat-header">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="position-relative me-3">
+                                                        <div class="avatar bg-secondary" id="header-avatar">
+                                                            <i class="fas fa-user"></i>
+                                                        </div>
+                                                        <div class="status-indicator bg-success"></div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-0 fw-bold me-2" id="chat-username">Chọn cuộc trò chuyện</h6>
+                                                        <button class="btn btn-sm btn-outline-secondary" id="edit-conv-name-btn" style="display: none;" title="Đổi tên">
+                                                            <i class="fas fa-pen"></i>
+                                                        </button>
+                                                        <small class="text-muted" id="chat-status">Để bắt đầu chat</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Chat Messages -->
+                                            <div class="chat-messages" id="chat-messages">
+                                                <div class="welcome-message">
+                                                    <i class="fas fa-comments"></i>
+                                                    <h5 class="mb-2">Chào mừng đến với Odoo Chat</h5>
+                                                    <p class="mb-0">Chọn một cuộc trò chuyện để bắt đầu nhắn tin</p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Typing Indicator -->
+                                            <div class="typing-indicator" id="typing-indicator">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-sm bg-secondary me-2">
+                                                        <i class="fas fa-user"></i>
+                                                    </div>
+                                                    <div class="typing-dots">
+                                                        <div class="typing-dot"></div>
+                                                        <div class="typing-dot"></div>
+                                                        <div class="typing-dot"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Chat Input -->
+                                            <div class="chat-input">
+                                                <div class="input-group">
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           id="message-input"
+                                                           placeholder="Nhập tin nhắn..."
+                                                           />
+                                                    <button id="send-button" type="button">
+                                                        <i class="fas fa-paper-plane"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+                        <script type="text/javascript">
+                            window.conversations = <t t-raw="conversation_data" />;
+                        </script>
+                        <script type="text/javascript" src="chat_module/static/src/js/chat2.js"></script>
+                    </body>
+                </html>
+            </t>
+        </template>
+    </data>
+</odoo>
